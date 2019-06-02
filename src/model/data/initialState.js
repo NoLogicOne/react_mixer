@@ -1,17 +1,21 @@
 export const data = {
 	groups: {
 		group1: {
-			words: [
-				"word1",
-				"word2"
-			]
+			sample:	"word1\nword2"
 		},
 		group2: {
-			words: [
-				"word3",
-				"word4"
-			]
+			sample:	"word3\nword4"
 		}
 	},
-	mix: ""
+	mix: "",
+	saves: {
+		save1: {
+			human_name: "Подборка Питер",
+			sample: "Спб\nСанкт-Петербург\nПитер"
+		},
+		save2: {
+			human_name: "Тестовая подборка",
+			sample: "тест\nтест2\nтест назад"
+		}
+	}
 }

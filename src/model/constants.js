@@ -1,0 +1,5 @@
+export const INPUT_TEXT = "INPUT_TEXT"
+export const SAVE_SAMPLE = "SAVE_SAMPLE"
+export const ADD_WINDOW = "ADD_WINDOW"
+export const CHANGE_WINDOW = "CHANGE_WINDOW"
+export const GET_MIX = "GET_MIX"

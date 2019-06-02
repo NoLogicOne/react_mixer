@@ -13,7 +13,6 @@ import './index.css'
 
 const reducer = combineReducers(reducers)
 const store = createStore(reducer, loadState())
-// const store = createStore(reducer, loadState())
 
 const saveState = () => {
 	let saved = JSON.stringify(store.getState())

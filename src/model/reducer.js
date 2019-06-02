@@ -13,3 +13,10 @@ export const mix = (state = data.mix, action) => {
 			return state
 	}
 }
+
+export const save = (state = data.save, action) => {
+	switch (action.type) {
+		default:
+			return state
+	}
+}
