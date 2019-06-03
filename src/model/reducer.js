@@ -14,7 +14,7 @@ export const mix = (state = data.mix, action) => {
 	}
 }
 
-export const save = (state = data.save, action) => {
+export const saves = (state = data.saves, action) => {
 	switch (action.type) {
 		default:
 			return state

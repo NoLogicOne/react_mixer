@@ -1,14 +1,21 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
+
+import Groups from "./Groups/Groups.js"
 
 import {connect} from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <h1>MIXER</h1>
-    </div>
-  );
+class App extends Component{
+  render() {
+    const {groups} = this.props.data
+    return (
+      <div className="App">
+        <h1>MIXER</h1>
+        <Groups groups={groups}/>
+        <textarea cols="30" rows="10"></textarea>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => ({
