@@ -12,29 +12,29 @@ import * as serviceWorker from './serviceWorker'
 import './index.css'
 
 const reducer = combineReducers(reducers)
-// const store = createStore(reducer, data)
-const store = createStore(reducer, loadState())
+const store = createStore(reducer, data)
+// const store = createStore(reducer, loadState())
 
-const saveState = () => {
-	let saved = JSON.stringify(store.getState())
-	if(!localStorage.mixer){
-		localStorage.setItem("mixer", saved)
-	} else {
-		localStorage.mixer = saved
-	}
-}
+// const saveState = () => {
+// 	let saved = JSON.stringify(store.getState())
+// 	if(!localStorage.mixer){
+// 		localStorage.setItem("mixer", saved)
+// 	} else {
+// 		localStorage.mixer = saved
+// 	}
+// }
 
-function loadState() {
-	let loaded = data
+// function loadState() {
+// 	let loaded = data
 
-	if(localStorage.mixer !== undefined){
-		loaded = JSON.parse(localStorage.mixer)
-	}
+// 	if(localStorage.mixer !== undefined){
+// 		loaded = JSON.parse(localStorage.mixer)
+// 	}
 
-	return loaded
-}
+// 	return loaded
+// }
 
-store.subscribe(saveState)
+// store.subscribe(saveState)
 
 ReactDOM.render(
 	<Provider store={store}>

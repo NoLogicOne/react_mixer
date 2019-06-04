@@ -7,11 +7,11 @@ import {connect} from 'react-redux'
 
 class App extends Component{
   render() {
-    const {groups} = this.props.data
+    const {groups, saves} = this.props.data
     return (
       <div className="App">
         <h1>MIXER</h1>
-        <Groups groups={groups}/>
+        <Groups groups={groups} saves={saves}/>
         <textarea cols="30" rows="10"></textarea>
       </div>
     );

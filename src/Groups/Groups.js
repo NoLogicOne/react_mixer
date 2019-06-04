@@ -2,7 +2,7 @@ import React from "react"
 
 import Group from "./Group/Group.js"
 
-const Groups = ({groups}) => {
+const Groups = ({groups, saves}) => {
     
     const renderGroups = () => {
         let arrayGroups = []
@@ -11,12 +11,12 @@ const Groups = ({groups}) => {
             arrayGroups.push(groups[key])
         }
         return arrayGroups.map(c => 
-            <Group key={c.sample} sample={c.sample} />
+            <Group key={c.sample} saves={saves} {...c} />
         )
     }
 
     return (
-        <div className="groups">
+        <div className="mixer__groups">
             {renderGroups()}
         </div>
     )

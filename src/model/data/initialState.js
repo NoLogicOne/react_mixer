@@ -1,10 +1,12 @@
 export const data = {
 	groups: {
 		group1: {
-			sample:	"word1\nword2"
+			sample:	"word1\nword2",
+			isSample: true
 		},
 		group2: {
-			sample:	"word3\nword4"
+			sample:	"word3\nword4",
+			isSample: false
 		}
 	},
 	mix: "",
