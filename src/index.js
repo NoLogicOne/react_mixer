@@ -35,6 +35,7 @@ const store = createStore(reducer, data)
 // }
 
 // store.subscribe(saveState)
+store.subscribe(() => {console.log(store.getState())})
 
 ReactDOM.render(
 	<Provider store={store}>

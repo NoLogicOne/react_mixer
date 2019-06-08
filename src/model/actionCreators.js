@@ -18,6 +18,12 @@ export const saveSample = (sample, human_name) => ({
     human_name
 })
 
+export const loadSample = (idx, name, saves) => ({
+    type: types.LOAD_SAMPLE,
+    idx,
+    sample: saves[name].sample
+})
+
 export const changeWindow = (idx) => ({
     type: types.CHANGE_WINDOW,
     idx

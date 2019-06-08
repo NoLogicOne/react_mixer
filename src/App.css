@@ -1,3 +1,20 @@
 .App {
   text-align: center;
 }
+
+h1{
+  background: grey;
+  display: inline-block;
+  padding: 0 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px black;
+  cursor: pointer;
+  opacity: .5;
+  transition: all .3s;
+}
+
+h1:hover{
+  background: black;
+  color: white;
+  opacity: 1;
+}

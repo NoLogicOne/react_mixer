@@ -2,23 +2,35 @@ import React from "react"
 
 import Group from "./Group/Group.js"
 
-const Groups = ({groups, saves}) => {
+const Groups = ({groups, addWindow, ...throwed}) => {
     
     const renderGroups = () => {
         let arrayGroups = []
         
         for(let key in groups){
-            arrayGroups.push(groups[key])
+            arrayGroups.push([groups[key], key])
         }
-        return arrayGroups.map(c => 
-            <Group key={c.sample} saves={saves} {...c} />
+
+        return arrayGroups.map( c => 
+            <Group key={c[1]} idx={c[1]} {...c[0]} {...throwed} />
         )
     }
 
+    const AddButton = () => (
+        <button 
+            value="MIX" 
+            className="mixer__add-group"
+            onClick={addWindow}
+        />
+    )
+
     return (
-        <div className="mixer__groups">
-            {renderGroups()}
-        </div>
+        <>
+            <div className="mixer__groups">
+                {renderGroups()}
+                <AddButton />
+            </div>
+        </>
     )
 }
 
