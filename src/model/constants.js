@@ -9,3 +9,4 @@ export const ON_MIX_CHANGE = "ON_MIX_CHANGE"
 
 export const SAVE_SAMPLE = "SAVE_SAMPLE"
 export const LOAD_SAMPLE = "LOAD_SAMPLE"
+export const DELETE_SAVE = "DELETE_SAVE"

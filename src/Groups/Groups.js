@@ -20,13 +20,14 @@ const Groups = ({groups, addWindow, ...throwed}) => {
         <button 
             value="MIX" 
             className="mixer__add-group"
+            id="mixer__add-group"
             onClick={addWindow}
         />
     )
 
     return (
         <>
-            <div className="mixer__groups">
+            <div id="mixer__groups" className="mixer__groups">
                 {renderGroups()}
                 <AddButton />
             </div>

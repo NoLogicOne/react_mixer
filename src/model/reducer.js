@@ -42,6 +42,8 @@ export const mix = (state = data.mix, action) => {
 			}
 
 			let samplesArray = samples
+				// обработка null, undefined, "" одновременно
+				.filter(c => !!c)
 				.map(c => c.split("\n"))
 			
 			return mixArrays(samplesArray)
@@ -64,7 +66,7 @@ export const saves = (state = data.saves, action) => {
 		case types.SAVE_SAMPLE:
 			if(!name) return state
 			let names = []
-			let id = "save" + (Object.keys(state).length + 1);			
+			let id = "save" + Date.now();			
 			
 			for (let key in state) {
 				names.push(state[key].human_name)
@@ -86,9 +88,13 @@ export const saves = (state = data.saves, action) => {
 			res[id].sample = sample
 
 			return res
+		
+		case types.DELETE_SAVE:
+			delete res[name]
+			return res
 
-	default:
-		return state
+		default:
+			return state
 	}
 }
 

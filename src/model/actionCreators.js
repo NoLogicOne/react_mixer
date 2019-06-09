@@ -38,3 +38,8 @@ export const onMixChange = (value) => ({
     type: types.ON_MIX_CHANGE,
     value
 })
+
+export const deleteSave = (name) => ({
+    type: types.DELETE_SAVE,
+    name
+})

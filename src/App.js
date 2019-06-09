@@ -8,14 +8,23 @@ import Groups from "./Groups/Groups.js"
 
 
 class App extends Component{
+  
   render() {
     const {groups, saves, mix} = this.props.data
     const { onMixChange } = this.props
+
     return (
       <div className="App">
         <h1 onClick={this.props.getMix}>MIXER</h1>
+        <div className="mixer__hotkeys">
+          <p>ctrl + A - добавить поле ввода</p>
+          <p>ctrl + Enter - смешать</p>
+          <p>ctrl + D - вернуться в стандартное состояние</p>
+          <p>ctrl + S - сохранить подборку</p>
+        </div>
         <Groups groups={groups} saves={saves} {...this.props}/>
         <textarea 
+          className="mixer__result"
           cols="30" 
           rows="10"
           value={mix}
@@ -55,6 +64,9 @@ const mergeProps = (stateProps, dispatchProps) => {
     },
     onMixChange: (value) => {
       dispatch(AC.onMixChange(value))
+    },
+    deleteSave: (name) => {
+      dispatch(AC.deleteSave(name))
     }
   }
 }
