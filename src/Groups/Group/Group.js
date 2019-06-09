@@ -8,12 +8,14 @@ const Group = ({sample = "",
                inputText,
                idx,
                changeWindow,
-               loadSample
+               loadSample,
+               saveSample
             }) => {
     
     const renderSample = 
         <div className="mixer__group">
-            <div className="mixer__sample_header">Sample</div>
+            <div onClick={ e => saveSample(idx, prompt("Человеческое имя"))} 
+                className="mixer__sample_header">Sample</div>
             <div className="mixer__sample_load"
                  onClick={e => changeWindow(idx)}>
                 &dArr;

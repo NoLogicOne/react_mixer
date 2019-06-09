@@ -9,13 +9,17 @@ import Groups from "./Groups/Groups.js"
 
 class App extends Component{
   render() {
-    const {groups, saves} = this.props.data
-    // const { addWindow } = this.props
+    const {groups, saves, mix} = this.props.data
+    const { onMixChange } = this.props
     return (
       <div className="App">
-        <h1>MIXER</h1>
+        <h1 onClick={this.props.getMix}>MIXER</h1>
         <Groups groups={groups} saves={saves} {...this.props}/>
-        <textarea cols="30" rows="10"></textarea>
+        <textarea 
+          cols="30" 
+          rows="10"
+          value={mix}
+          onChange={e => onMixChange(e.target.value)} />
       </div>
     );
   }
@@ -42,6 +46,15 @@ const mergeProps = (stateProps, dispatchProps) => {
     },
     loadSample: (idx, name) => {
       dispatch(AC.loadSample(idx, name, data.saves))
+    },
+    saveSample: (idx, name) => {
+      dispatch(AC.saveSample(idx, name, data.groups))
+    },
+    getMix: () => {
+      dispatch(AC.getMix(data.groups))
+    },
+    onMixChange: (value) => {
+      dispatch(AC.onMixChange(value))
     }
   }
 }

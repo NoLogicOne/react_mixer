@@ -12,10 +12,10 @@ export const addWindow = () => ({
     type: types.ADD_WINDOW
 })
 
-export const saveSample = (sample, human_name) => ({
+export const saveSample = (idx, name, groups) => ({
     type: types.SAVE_SAMPLE,
-    sample,
-    human_name
+    sample: groups[idx].sample,
+    name
 })
 
 export const loadSample = (idx, name, saves) => ({
@@ -32,4 +32,9 @@ export const changeWindow = (idx) => ({
 export const getMix = (groups) => ({
     type: types.GET_MIX,
     groups
+})
+
+export const onMixChange = (value) => ({
+    type: types.ON_MIX_CHANGE,
+    value
 })
